@@ -1,6 +1,5 @@
 { 
   "project_folder" : "/raven/u/wangy/nf_atacseq_test" ,
-  "diffbind" : "/raven/u/wangy/nf_atacseq_test/diffbind3_output/" ,
   "samplestable" : "/raven/u/wangy/nf_atacseq_test/sample_sheet.xlsx",
   "samplesheet": "/raven/u/wangy/nf_atacseq_test/diffbind_sample_sheet.csv"
 }
