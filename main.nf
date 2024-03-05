@@ -156,7 +156,7 @@ hist<-dba(sampleSheet=samples)
 pdf("general_QC.pdf")
 plot(hist)
 # count reads
-hist<-dba.count(hist)
+hist<-dba.count(hist, bParallel=FALSE)
 plot(hist)
 # check fraction of reads in peaks and save results
 info <- dba.show(hist)
@@ -223,7 +223,7 @@ consensus[, 'CHR'] = factor(consensus[,'CHR'], levels = 1:length(hist[['chrmap']
 consensus[,'chrom_names'] = rep(hist[['chrmap']], as.numeric(table(consensus[, 'CHR'])))
 write.xlsx(consensus, 'consensus_peaks.xlsx', row.names = FALSE)
 write.table(consensus, 'consensus_peaks.tsv', sep = '\t', quote = FALSE, row.names = FALSE, col.names = TRUE)
-save.image("paste0(TMP,'/diffbind.Rdata'")
+save.image(paste0(TMP,'/diffbind.Rdata'))
 sessionInfo()
 
     """
