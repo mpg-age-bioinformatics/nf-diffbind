@@ -43,7 +43,7 @@ process make_samplesheet {
     val samplesheet
 
   when:
-    //   (  ! file("${params.project_folder}/diffbind_sample_sheet.csv").exists() )
+      (  ! file("${params.project_folder}/diffbind_sample_sheet.csv").exists() )
 
   script:
     """
@@ -121,7 +121,7 @@ process diffbind_R {
   stageOutMode 'move'
 
   when:
-    // ( ! file("${params.project_folder}/tmp/ATACSeqQC.${sample}.Rdata").exists() ) 
+    ( ! file("${params.project_folder}/diffbind3_output/consensus_peaks.tsv").exists() ) 
   input:
     val samplesheet
   
