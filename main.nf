@@ -229,6 +229,23 @@ sessionInfo()
     """
 }
 
+
+process upload_paths {
+  stageInMode 'symlink'
+  stageOutMode 'move'
+
+  script:
+  """
+    rm -rf upload.txt
+
+    cd ${params.project_folder}/diffbind3_output/
+    for f in \$(ls *.{pdf,xlsx}) ; do echo "diffbind \$(readlink -f \${f})" >>  upload.txt_ ; done  
+    uniq upload.txt_ upload.txt 
+    rm upload.txt_
+  """
+}
+
+
 workflow images {
   main:
     get_images()
@@ -257,4 +274,9 @@ workflow {
     def samplesheet = params.containsKey('samplesheet') ? params.samplesheet : "${params.project_folder}/diffbind_sample_sheet.csv"
 
     diffbind_R(samplesheet)
+}
+
+workflow upload {
+  main:
+    upload_paths()
 }
