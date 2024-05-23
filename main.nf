@@ -134,16 +134,16 @@ print("loading libraries")
 library(DiffBind)
 library(openxlsx)
 
-TMP = '/workdir/tmp/'
+TMP = '${params.project_folder}tmp/'
 
-dir.create("/workdir/diffbind3_output/", recursive = TRUE, showWarnings = FALSE)
-setwd("/workdir/diffbind3_output/")
+dir.create("${params.project_folder}diffbind3_output/", recursive = TRUE, showWarnings = FALSE)
+setwd("${params.project_folder}diffbind3_output/")
 
 samples = read.csv("${samplesheet}")
 # check how many peaks are in each samples
 for(s in 1:nrow(samples)){
   filein=gsub('_peaks.xls', '_summits.bed', samples[s,'Peaks'])
-  con <- file(gsub('${params.project_folder}', '/workdir/', filein))
+  con <- file(gsub('${params.project_folder}', '${params.project_folder}', filein))
   print(con)
   samples[s, 'nPeaks'] = length(readLines(con))
   close(con)
