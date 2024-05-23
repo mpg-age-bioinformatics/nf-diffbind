@@ -134,10 +134,10 @@ print("loading libraries")
 library(DiffBind)
 library(openxlsx)
 
-TMP = '${params.project_folder}tmp/'
+TMP = '${params.project_folder}/tmp/'
 
-dir.create("${params.project_folder}diffbind3_output/", recursive = TRUE, showWarnings = FALSE)
-setwd("${params.project_folder}diffbind3_output/")
+dir.create("${params.project_folder}/diffbind3_output/", recursive = TRUE, showWarnings = FALSE)
+setwd("${params.project_folder}/diffbind3_output/")
 
 samples = read.csv("${samplesheet}")
 # check how many peaks are in each samples
