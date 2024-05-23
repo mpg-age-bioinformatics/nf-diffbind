@@ -30,9 +30,9 @@ git clone https://github.com/mpg-age-bioinformatics/nf-diffbind.git
 
 Run the workflow:
 ```
-nextflow run nf-diffbind -params-file ./nf-diffbind/params.slurm.json -entry images --user "$(id -u):$(id -g)" && \
-nextflow run nf-diffbind -params-file ./nf-diffbind/params.slurm.json -entry samplesheet --user "$(id -u):$(id -g)" && \
-nextflow run nf-diffbind -params-file ./nf-diffbind/params.slurm.json --user "$(id -u):$(id -g)"
+nextflow run nf-diffbind -params-file  macs_test/${PARAMS} -entry images --user "$(id -u):$(id -g)" && \
+nextflow run nf-diffbind -params-file  macs_test/${PARAMS} -entry samplesheet --user "$(id -u):$(id -g)" && \
+nextflow run nf-diffbind -params-file  macs_test/${PARAMS} --user "$(id -u):$(id -g)"
 ```
 
 ## Contributing
