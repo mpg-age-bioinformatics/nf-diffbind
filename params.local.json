@@ -1,0 +1,5 @@
+{ 
+  "project_folder" : "/tmp/nextflow_atac_local_test/macs_test" ,
+  "samplestable" : "/tmp/nextflow_atac_local_test/macs_test/sample_sheet.xlsx",
+  "samplesheet": "/tmp/nextflow_atac_local_test/macs_test/diffbind_sample_sheet.csv"
+}
