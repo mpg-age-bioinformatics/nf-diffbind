@@ -10,7 +10,7 @@ Download the demo data:
 cd /tmp/nextflow_atac_local_test/macs_test/
 curl -J -O https://datashare.mpcdf.mpg.de/s/nzO5RFUXK3kyhuw/download
 unzip bowtie2_output.zip 
-curl -J -O https://datashare.mpcdf.mpg.de/s/M3VgllPHFCBmJbw/download
+curl -J -O https://datashare.mpcdf.mpg.de/s/9ZCprbdEHWoL5vL/download
 unzip macs2_output.zip 
 ```
 
