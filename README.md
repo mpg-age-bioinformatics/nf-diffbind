@@ -26,6 +26,7 @@ Get the latest repo:
 ```
 cd /tmp/nextflow_atac_local_test/
 git clone https://github.com/mpg-age-bioinformatics/nf-diffbind.git
+git clone https://github.com/mpg-age-bioinformatics/nf-CHIPseeker.git
 ```
 
 Run the workflow:
@@ -34,6 +35,13 @@ nextflow run nf-diffbind -params-file  macs_test/${PARAMS} -entry images --user 
 nextflow run nf-diffbind -params-file  macs_test/${PARAMS} -entry samplesheet --user "$(id -u):$(id -g)" && \
 nextflow run nf-diffbind -params-file  macs_test/${PARAMS} --user "$(id -u):$(id -g)"
 ```
+
+## For annotating the peaks
+```
+nextflow run nf-CHIPseeker -params-file ./nf-CHIPseeker/params.local.json -entry images --user "$(id -u):$(id -g)" && \
+nextflow run nf-CHIPseeker -params-file ./nf-CHIPseeker/params.local.json --user "$(id -u):$(id -g)" 
+```
+
 
 ## Contributing
 
